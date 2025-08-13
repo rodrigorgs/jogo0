@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bycyfxdm2obs7"]
+
+[ext_resource type="Script" uid="uid://dogt2mipik47e" path="res://Scripts/jogador.gd" id="1_lideu"]
+[ext_resource type="Texture2D" uid="uid://qo8lt315vodi" path="res://Imagens/jogador.png" id="1_mdwl2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdwl2"]
+size = Vector2(128, 128)
+
+[node name="Jogador" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_lideu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mdwl2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mdwl2")
+
+[node name="RespawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

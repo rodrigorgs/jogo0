@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwfwonarnf7lc"]
+
+[ext_resource type="Script" uid="uid://cow73usnlm86q" path="res://Scripts/entidade.gd" id="1_ge5gy"]
+[ext_resource type="Texture2D" uid="uid://btft24c627uj0" path="res://Imagens/inimigo1.png" id="1_vtmhj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ge5gy"]
+size = Vector2(256, 256)
+
+[node name="Entidade" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_ge5gy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vtmhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ge5gy")
+
+[node name="RespawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="hit" from="." to="." method="_on_hit"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

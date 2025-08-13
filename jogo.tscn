@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://clgmwtxoy4nwu"]
+
+[ext_resource type="PackedScene" uid="uid://dwfwonarnf7lc" path="res://Prefabs/entidade.tscn" id="1_kxg5b"]
+[ext_resource type="PackedScene" uid="uid://bycyfxdm2obs7" path="res://Prefabs/jogador.tscn" id="2_evvns"]
+
+[node name="Jogo" type="Node2D"]
+
+[node name="Jogador" parent="." instance=ExtResource("2_evvns")]
+position = Vector2(500, 380)
+scale = Vector2(0.959999, 0.959999)
+
+[node name="Inimigo1" parent="." instance=ExtResource("1_kxg5b")]
+scale = Vector2(0.32, 0.32)
+imagem = "uid://btft24c627uj0"
+
+[node name="Inimigo2" parent="." instance=ExtResource("1_kxg5b")]
+scale = Vector2(0.32, 0.32)
+velocidade = 400.0
+imagem = "uid://cgpwqabrlnvk2"
+
+[node name="Inimigo3" parent="." instance=ExtResource("1_kxg5b")]
+scale = Vector2(0.32, 0.32)
+velocidade = 500.0
+imagem = "uid://cnr1s65fmlre5"
+
+[node name="Item1" parent="." instance=ExtResource("1_kxg5b")]
+scale = Vector2(0.293528, 0.293528)
+imagem = "uid://c285lb0gaua7h"
+
+[node name="Item2" parent="." instance=ExtResource("1_kxg5b")]
+scale = Vector2(0.293528, 0.293528)
+imagem = "uid://b3rh1x8l6gb1s"
+
+[node name="Item3" parent="." instance=ExtResource("1_kxg5b")]
+scale = Vector2(0.293528, 0.293528)
+imagem = "uid://bkxlspdrsmpko"
