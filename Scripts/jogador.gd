@@ -31,10 +31,12 @@ func _process(delta):
 		
 
 func _on_area_entered(area: Area2D) -> void:
-	$RespawnTimer.start()
-	$Sprite2D.self_modulate.a = 0.3
+	if area.dano > 0:
+		$RespawnTimer.start()
+		$Sprite2D.self_modulate.a = 0.3
+		$CollisionShape2D.set_deferred("disabled", true)
 	hit.emit()
-	$CollisionShape2D.set_deferred("disabled", true)
+	
 
 func _on_respawn_timer_timeout() -> void:
 	$Sprite2D.self_modulate.a = 1.0

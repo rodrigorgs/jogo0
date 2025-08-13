@@ -7,8 +7,8 @@ var screen_size
 var direction := Vector2(0, 0)
 
 @export var velocidade: float = 300
-@export var dano: int = 0
-@export var pontos: int = 0
+@export var dano: int = 1
+@export var pontos: int = 10
 @export_file("*.png", "*.jpg", "*.jpeg", "*.webm") var imagem: String = "res://Imagens/inimigo1.png":
 	set(value):
 		imagem = value
@@ -53,10 +53,10 @@ func _process(delta):
 func _on_area_entered(area: Area2D) -> void:
 	hide()
 	$CollisionShape2D.set_deferred("disabled", true)
-	hit.emit()
+	hit.emit(self)
 	$RespawnTimer.start()
 
-func _on_hit() -> void:
+func _on_hit(node: Entidade) -> void:
 	$AudioStreamPlayer2D.play()
 
 func _on_respawn_timer_timeout() -> void:

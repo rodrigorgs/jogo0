@@ -1,42 +1,77 @@
-[gd_scene load_steps=3 format=3 uid="uid://clgmwtxoy4nwu"]
+[gd_scene load_steps=4 format=3 uid="uid://clgmwtxoy4nwu"]
 
 [ext_resource type="PackedScene" uid="uid://dwfwonarnf7lc" path="res://Prefabs/entidade.tscn" id="1_kxg5b"]
+[ext_resource type="Script" uid="uid://dlpdxblcvc2cc" path="res://Scripts/jogo.gd" id="1_yq54j"]
 [ext_resource type="PackedScene" uid="uid://bycyfxdm2obs7" path="res://Prefabs/jogador.tscn" id="2_evvns"]
 
 [node name="Jogo" type="Node2D"]
+script = ExtResource("1_yq54j")
 
 [node name="Jogador" parent="." instance=ExtResource("2_evvns")]
 position = Vector2(500, 380)
 scale = Vector2(0.959999, 0.959999)
+speed = 200
 
-[node name="Inimigo1" parent="." instance=ExtResource("1_kxg5b")]
+[node name="Entidades" type="Node" parent="."]
+
+[node name="Inimigo1" parent="Entidades" instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.32, 0.32)
+velocidade = 150.0
+pontos = 0
 imagem = "uid://btft24c627uj0"
 som = "res://Audio/inimigo1.wav"
 
-[node name="Inimigo2" parent="." instance=ExtResource("1_kxg5b")]
+[node name="Inimigo2" parent="Entidades" instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.32, 0.32)
 velocidade = 400.0
+dano = 2
+pontos = 0
 imagem = "uid://cgpwqabrlnvk2"
 som = "res://Audio/inimigo1.wav"
 
-[node name="Inimigo3" parent="." instance=ExtResource("1_kxg5b")]
+[node name="Inimigo3" parent="Entidades" instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.32, 0.32)
-velocidade = 500.0
+velocidade = 180.0
+dano = 3
+pontos = 0
 imagem = "uid://cnr1s65fmlre5"
 som = "res://Audio/inimigo1.wav"
 
-[node name="Item1" parent="." instance=ExtResource("1_kxg5b")]
+[node name="Item1" parent="Entidades" instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.293528, 0.293528)
+velocidade = 190.0
+dano = 0
 imagem = "uid://c285lb0gaua7h"
 som = "res://Audio/inimigo1.wav"
 
-[node name="Item2" parent="." instance=ExtResource("1_kxg5b")]
+[node name="Item2" parent="Entidades" instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.293528, 0.293528)
+dano = 0
+pontos = 20
 imagem = "uid://b3rh1x8l6gb1s"
 som = "res://Audio/inimigo1.wav"
 
-[node name="Item3" parent="." instance=ExtResource("1_kxg5b")]
+[node name="Item3" parent="Entidades" instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.293528, 0.293528)
+dano = 0
+pontos = 30
 imagem = "uid://bkxlspdrsmpko"
 som = "res://Audio/inimigo1.wav"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pontos" type="Label" parent="CanvasLayer"]
+offset_left = 64.0
+offset_top = 16.0
+offset_right = 104.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+
+[node name="Vidas" type="Label" parent="CanvasLayer"]
+offset_left = 292.0
+offset_top = 16.0
+offset_right = 332.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
