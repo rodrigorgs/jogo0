@@ -9,6 +9,7 @@ size = Vector2(256, 256)
 [node name="Entidade" type="Area2D"]
 collision_layer = 2
 script = ExtResource("1_ge5gy")
+som = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_vtmhj")
@@ -18,6 +19,8 @@ shape = SubResource("RectangleShape2D_ge5gy")
 
 [node name="RespawnTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="hit" from="." to="." method="_on_hit"]

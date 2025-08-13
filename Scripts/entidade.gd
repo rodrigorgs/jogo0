@@ -17,6 +17,15 @@ var direction := Vector2(0, 0)
 			if tex is Texture2D:
 				$Sprite2D.texture = tex
 
+@export_file("*.wav", "*.aiff", "*.mp3", "*.ogg") var som: String = "res://Audio/inimigo1.wav":
+	set(value):
+		som = value
+		if som != "":
+			var stream = load(som)
+			if stream is AudioStream:
+				$AudioStreamPlayer2D.stream = stream
+
+
 func _ready():
 	screen_size = get_viewport_rect().size
 	spawn(false)
@@ -48,7 +57,7 @@ func _on_area_entered(area: Area2D) -> void:
 	$RespawnTimer.start()
 
 func _on_hit() -> void:
-	pass # Replace with function body.
+	$AudioStreamPlayer2D.play()
 
 func _on_respawn_timer_timeout() -> void:
 	show()

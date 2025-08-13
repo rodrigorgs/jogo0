@@ -12,25 +12,31 @@ scale = Vector2(0.959999, 0.959999)
 [node name="Inimigo1" parent="." instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.32, 0.32)
 imagem = "uid://btft24c627uj0"
+som = "res://Audio/inimigo1.wav"
 
 [node name="Inimigo2" parent="." instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.32, 0.32)
 velocidade = 400.0
 imagem = "uid://cgpwqabrlnvk2"
+som = "res://Audio/inimigo1.wav"
 
 [node name="Inimigo3" parent="." instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.32, 0.32)
 velocidade = 500.0
 imagem = "uid://cnr1s65fmlre5"
+som = "res://Audio/inimigo1.wav"
 
 [node name="Item1" parent="." instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.293528, 0.293528)
 imagem = "uid://c285lb0gaua7h"
+som = "res://Audio/inimigo1.wav"
 
 [node name="Item2" parent="." instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.293528, 0.293528)
 imagem = "uid://b3rh1x8l6gb1s"
+som = "res://Audio/inimigo1.wav"
 
 [node name="Item3" parent="." instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.293528, 0.293528)
 imagem = "uid://bkxlspdrsmpko"
+som = "res://Audio/inimigo1.wav"
