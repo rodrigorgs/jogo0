@@ -12,6 +12,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_pressed("ui_left"):
+
 		angle -= rotation_speed * delta
 	if Input.is_action_pressed("ui_right"):
 		angle += rotation_speed * delta

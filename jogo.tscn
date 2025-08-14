@@ -6,57 +6,45 @@
 
 [node name="Jogo" type="Node2D"]
 script = ExtResource("1_yq54j")
+pontos = -1000000
+vidas = 10
 
 [node name="Jogador" parent="." instance=ExtResource("2_evvns")]
-position = Vector2(500, 380)
+position = Vector2(436, 257)
 scale = Vector2(0.959999, 0.959999)
 speed = 200
 
 [node name="Entidades" type="Node" parent="."]
 
-[node name="Inimigo1" parent="Entidades" instance=ExtResource("1_kxg5b")]
+[node name="Player123456" parent="Entidades" instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.32, 0.32)
-velocidade = 150.0
+velocidade = 417.0
+dano = 100000000000
 pontos = 0
 imagem = "uid://btft24c627uj0"
-som = "res://Audio/inimigo1.wav"
+som = "uid://xi4imixsfejn"
 
-[node name="Inimigo2" parent="Entidades" instance=ExtResource("1_kxg5b")]
+[node name="Asteroide" parent="Entidades" instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.32, 0.32)
 velocidade = 400.0
 dano = 2
 pontos = 0
 imagem = "uid://cgpwqabrlnvk2"
-som = "res://Audio/inimigo1.wav"
+som = "uid://djdv253f0lpbf"
 
-[node name="Inimigo3" parent="Entidades" instance=ExtResource("1_kxg5b")]
-scale = Vector2(0.32, 0.32)
-velocidade = 180.0
-dano = 3
-pontos = 0
-imagem = "uid://cnr1s65fmlre5"
-som = "res://Audio/inimigo1.wav"
-
-[node name="Item1" parent="Entidades" instance=ExtResource("1_kxg5b")]
-scale = Vector2(0.293528, 0.293528)
+[node name="Sol" parent="Entidades" instance=ExtResource("1_kxg5b")]
+scale = Vector2(0.6, 0.6)
 velocidade = 190.0
 dano = 0
 imagem = "uid://c285lb0gaua7h"
-som = "res://Audio/inimigo1.wav"
+som = "uid://daqf0eh1db7pm"
 
-[node name="Item2" parent="Entidades" instance=ExtResource("1_kxg5b")]
+[node name="Estrela" parent="Entidades" instance=ExtResource("1_kxg5b")]
 scale = Vector2(0.293528, 0.293528)
 dano = 0
 pontos = 20
 imagem = "uid://b3rh1x8l6gb1s"
-som = "res://Audio/inimigo1.wav"
-
-[node name="Item3" parent="Entidades" instance=ExtResource("1_kxg5b")]
-scale = Vector2(0.293528, 0.293528)
-dano = 0
-pontos = 30
-imagem = "uid://bkxlspdrsmpko"
-som = "res://Audio/inimigo1.wav"
+som = "uid://daqf0eh1db7pm"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -34,21 +34,22 @@ func spawn(random_position=true):
 	var angle = randf() * PI * 2
 	direction = Vector2(cos(angle), sin(angle))
 	if (random_position):
-		position.x = randf() * screen_size.x
-		position.y = randf() * screen_size.y
+		if not Engine.is_editor_hint():
+			position.x = randf() * screen_size.x
+			position.y = randf() * screen_size.y
 
 func _process(delta):
 	if not Engine.is_editor_hint():
 		position += direction * velocidade * delta
 	
-	if position.x < 0:
-		position.x = screen_size.x
-	elif position.x > screen_size.x:
-		position.x = 0
-	if position.y < 0:
-		position.y = screen_size.y
-	elif position.y > screen_size.y:
-		position.y = 0
+		if position.x < 0:
+			position.x = screen_size.x
+		elif position.x > screen_size.x:
+			position.x = 0
+		if position.y < 0:
+			position.y = screen_size.y
+		elif position.y > screen_size.y:
+			position.y = 0
 
 func _on_area_entered(area: Area2D) -> void:
 	hide()
